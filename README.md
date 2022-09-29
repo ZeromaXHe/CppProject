@@ -42,3 +42,7 @@
     使用快捷键 `Ctrl + Shift + P` 打开命令面板，输入 `C/C++ 编辑配置(UI)`，将会弹出 C/C++ 配置页面
 
     配置完成后，点击资源管理器，可以看到在 `.vscode` 文件夹中自动生成了 `c_cpp_properties.json` 文件；
+
+## VS Code Git 配置
+
+需要在设置中搜索 gitpath 然后在 settings.json 中编辑，修改 `"git.path": "C:/Program Files/Git/cmd/git.exe"`。不然 push 不生效
