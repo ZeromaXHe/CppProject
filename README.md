@@ -39,7 +39,9 @@
 
 7. C/C++ 配置
 
-    使用快捷键 `Ctrl + Shift + P` 打开命令面板，输入 `C/C++ 编辑配置(UI)`，将会弹出 C/C++ 配置页面
+    使用快捷键 `Ctrl + Shift + P` 打开命令面板，输入 `C/C++ 编辑配置(UI)`，将会弹出 C/C++ 配置页面。
+
+    需要配置编译器路径（我选的 g++.exe 的路径），IntelliSense 模式（我用的 win，选的 “windows-gcc-x64”）
 
     配置完成后，点击资源管理器，可以看到在 `.vscode` 文件夹中自动生成了 `c_cpp_properties.json` 文件；
 
