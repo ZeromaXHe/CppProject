@@ -33,7 +33,38 @@
 
 6. 调试 `test.cpp`。
 
-    还是在打开 test.cpp 的前提下，菜单栏点击 “运行 -> 添加配置”，选择 `C++(GDB/LLDB)`。（网上说在弹出的下拉选项中，选择g++.exe - 生成和调试活动文件；这一步貌似实际操作中并没有）
+    还是在打开 test.cpp 的前提下，菜单栏点击 “运行 -> 添加配置”，选择 `C++(GDB/LLDB)`。网上说在弹出的下拉选项中，选择g++.exe - 生成和调试活动文件；这一步貌似实际操作中并没有，需要使用 “(gdb) 启动” 来代替。需要把 program 和 miDebuggerPath 的内容略微改一下。externalConsole 改为 true 可以让调试控制台使用外部窗口，否则没办法进行输入，会报 “Unable to perform this action because the process is running.”
+
+    目前 launch.json 的配置中括号中内容如下：
+
+    ```json
+    {
+        "name": "(gdb) 启动",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${fileDirname}",
+        "environment": [],
+        "externalConsole": true,
+        "MIMode": "gdb",
+        "miDebuggerPath": "D:/MinGW/bin/gdb.exe",
+        "setupCommands": [
+            {
+                "description": "为 gdb 启用整齐打印",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+            },
+            {
+                "description":  "将反汇编风格设置为 Intel",
+                "text": "-gdb-set disassembly-flavor intel",
+                "ignoreFailures": true
+            }
+        ],
+        "preLaunchTask": "C/C++: g++.exe 生成活动文件"
+    }
+    ```
 
     然后就可以使用快捷键 F5 或者菜单栏“运行 -> 启动调试”进行调试了
 
@@ -41,7 +72,7 @@
 
     使用快捷键 `Ctrl + Shift + P` 打开命令面板，输入 `C/C++ 编辑配置(UI)`，将会弹出 C/C++ 配置页面。
 
-    需要配置编译器路径（我选的 g++.exe 的路径），IntelliSense 模式（我用的 win，选的 “windows-gcc-x64”）
+    需要配置编译器路径（我选的 `MinGW/bin/gcc.exe` 的路径），IntelliSense 模式（我用的 win，选的 “windows-gcc-x64”）
 
     配置完成后，点击资源管理器，可以看到在 `.vscode` 文件夹中自动生成了 `c_cpp_properties.json` 文件；
 
