@@ -46,6 +46,7 @@ public:
 
         int countUnexpiredTokens(int currentTime)
         {
+            // 一边遍历 map 一边删除
             for (auto iter = map.begin(); iter != map.end();)
             {
                 if (iter->second <= currentTime)
