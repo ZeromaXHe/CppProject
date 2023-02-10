@@ -243,7 +243,7 @@ int bitCount(int i)
 #include <unordered_map>
 ```
 
-使用 `count` 来判断存在
+使用 `count` 或 `map.find(xxx) != map.end()` 来判断存在（C++ 20 提供了 `contains`）
 
 
 
@@ -280,12 +280,22 @@ for (auto iter = map.begin(); iter != map.end();)
 #include <unordered_set>
 ```
 
-使用 `count` 来判断存在
+使用 `count` 或 `set.find(xxx) != set.end()` 来判断存在
 
 ### vector
 
 ```c++
 #include <vector>
+```
+
+#### 初始化
+
+```c++
+vector<int> v1(10);        //v1有10个元素，每个数的值都是0
+vector<int> v2{10};        //v2有1个元素，值是10
+ 
+vector<int> v3(10,1);      //v3有10个元素，每个数的值都是1
+vector<int> v4{10,1};      //v4有2个元素，值分别是10和1
 ```
 
 #### `emplace_back()` 和 `push_back()` 的区别
