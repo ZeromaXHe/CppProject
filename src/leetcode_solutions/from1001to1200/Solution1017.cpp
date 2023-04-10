@@ -1,12 +1,11 @@
 #include <iostream>
-#include <vector>
 
 using namespace std;
 
 /**
  * 1017. 负二进制转换 | 难度：中等
  */
-class Solution1053
+class Solution1017
 {
 public:
     /**
