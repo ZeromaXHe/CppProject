@@ -237,6 +237,20 @@ int bitCount(int i)
 
 最大公约数：`gcd()`
 
+### string stream
+
+```c++
+#include <sstream>
+```
+
+参考 1507 题，可以用来分割空格分隔的字符串
+
+```c++
+stringstream ss(date);
+string year, month, day;
+ss >> day >> month >> year;
+```
+
 ### unordered_map
 
 ```c++
