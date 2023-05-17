@@ -7,7 +7,7 @@ using namespace std;
 /**
  * 2441. 与对应负数同时存在的最大正整数 | 难度：简单
  */
-class Solution1016
+class Solution2441
 {
 public:
     /**
