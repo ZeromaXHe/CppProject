@@ -237,6 +237,16 @@ int bitCount(int i)
 
 最大公约数：`gcd()`
 
+### priority_queue
+
+```c++
+#include <queue>
+```
+
+最小堆 `priority_queue<int, vector<int>, greater<int>> pq;`
+
+最大堆 `priority_queue<int, vector<int>, less<int>> pq;`
+
 ### string stream
 
 ```c++
